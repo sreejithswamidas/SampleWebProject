@@ -21,7 +21,7 @@ export class UserService {
   getAllUser():Observable<any>{
     return this.http.get("http://localhost:8080/user/all")
   }
-  getOneUser(UserID:string){
+  getOneUser(UserID:string):Observable<any>{
     let param= new HttpParams().set('UserID',UserID)
     return this.http.get("http://localhost:8080/user/getOne",{params:param})
   }
