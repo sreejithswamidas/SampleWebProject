@@ -1,0 +1,22 @@
+<div class="container">
+  <div style="vertical-align: auto; width: 100%;">
+<mat-card>
+  <mat-card-header style="padding:10px "><b>New User Registration</b></mat-card-header>
+  <mat-card-content>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="New User name" [(ngModel)]="UserName" name="username" value="">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email id" [(ngModel)]="Email" name="email" value="" type="email">
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" [(ngModel)]="Password" name="username" value=""type="password">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Confirm Password" [(ngModel)]="ConfirmPassword" name="confirm_password" value=""type="password">
+          </mat-form-field><br>
+      <button mat-button (click)="addUser()">Create New User</button>
+</form></mat-card-content> 
+</mat-card></div>
+</div>

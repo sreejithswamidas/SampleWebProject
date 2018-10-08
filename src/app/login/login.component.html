@@ -1,0 +1,17 @@
+<div class="container">
+    <div style="vertical-align: auto; width: 100%;">
+  <mat-card>
+    <mat-card-header style="padding:10px "><b>Login</b></mat-card-header>
+    <mat-card-content>
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [(ngModel)]="UserID" name="UserID" value="">
+      </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" [(ngModel)]="Password" name="username" value=""type="password">
+          </mat-form-field><br>
+        <button mat-button (click)="login()">Login</button>
+  </form></mat-card-content> 
+  </mat-card></div>
+  </div>
+  
