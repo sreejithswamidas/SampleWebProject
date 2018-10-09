@@ -8,10 +8,11 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { ShowUsersComponent } from './show-users/show-users.component';
 import { UserService } from './user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenu, MatGridListModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenu, MatGridListModule, MatDialog, MatDialogActions, MatDialogContent, MatDialogModule } from '@angular/material';
 import { UserCreatedAlertComponent } from './user-created-alert/user-created-alert.component';
 import { LoginComponent } from './login/login.component';
 import { ShowUserComponent } from './show-user/show-user.component'
+import { Overlay } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -34,10 +35,11 @@ import { ShowUserComponent } from './show-user/show-user.component'
     MatInputModule,
     MatListModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
     
   ],
-  providers: [UserService],
+  providers: [UserService,MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

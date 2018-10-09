@@ -4,7 +4,7 @@
   <button mat-button routerLink="/showUsers" (click)="onClick()">Show All Users</button>
   <button mat-button routerLink="/#"  >About Us</button>
   <span style="width:70% "></span>
-  <button mat-button routerLink="/login" >Login</button>
+  <button mat-button (click)="loginPop()" >Login</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
