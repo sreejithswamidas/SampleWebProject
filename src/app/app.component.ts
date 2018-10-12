@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { LoginComponent } from './login/login.component';
+import { WarningComponent } from './warning/warning.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,11 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppComponent {
   title = 'test-app';
-  constructor(private http:HttpClient,private userService:UserService,private dialog:MatDialog){}
+  loggedIn:boolean
+  notloggedIn:boolean
+  
+  constructor(private userService:UserService,private dialog:MatDialog){
+  }
   ngOnInit(){
     
   }
@@ -20,7 +26,6 @@ export class AppComponent {
     obs.subscribe((response)=>console.log(response))
   }
   loginPop(){
-    let dialogRef=this.dialog.open(LoginComponent)
-    
+    this.dialog.open(LoginComponent)
   }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdduserComponent } from './adduser/adduser.component';
@@ -13,6 +13,7 @@ import { UserCreatedAlertComponent } from './user-created-alert/user-created-ale
 import { LoginComponent } from './login/login.component';
 import { ShowUserComponent } from './show-user/show-user.component'
 import { Overlay } from '@angular/cdk/overlay';
+import { WarningComponent } from './warning/warning.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { Overlay } from '@angular/cdk/overlay';
     UserCreatedAlertComponent,
     LoginComponent,
     ShowUserComponent,
+    WarningComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { Overlay } from '@angular/cdk/overlay';
     MatListModule,
     MatToolbarModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
     
   ],
   providers: [UserService,MatDialog],

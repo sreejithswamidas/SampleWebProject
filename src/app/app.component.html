@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-  <button mat-button routerLink="/addUser"  >Sign Up</button>
-  <button mat-button routerLink="/showUsers" (click)="onClick()">Show All Users</button>
+  <button mat-button *ngIf="!userService.loggedIn"routerLink="/addUser"  >Sign Up</button>
+  <button mat-button *ngIf="userService.loggedIn"routerLink="/showUsers" (click)="onClick()">Show All Users</button>
   <button mat-button routerLink="/#"  >About Us</button>
   <span style="width:70% "></span>
-  <button mat-button (click)="loginPop()" >Login</button>
+  <button mat-button *ngIf="!userService.loggedIn" (click)="loginPop()" >Login</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

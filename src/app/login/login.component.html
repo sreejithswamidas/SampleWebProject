@@ -2,17 +2,20 @@
       <h2 mat-dialog-title>Log In</h2>
 
   <mat-dialog-content >
-    <form>
-      <mat-form-field>
-        <input matInput placeholder="Email" [(ngModel)]="UserID" name="UserID" value="">
+    <div id="errormsg" *ngIf="!logedIn" style="color: chocolate;">Wrong Credentials</div>
+    <form [formGroup]="loginForm" >
+      <mat-form-field style="padding:20px;">
+        <input matInput placeholder="User ID" formControlName="userID"[(ngModel)]="UserID" name="UserID" value="">
+        <mat-error>User Id cannot be empty</mat-error>
       </mat-form-field><br>
-      <mat-form-field>
-        <input matInput placeholder="Password" [(ngModel)]="Password" name="username" value=""type="password">
+      <mat-form-field style="padding:20px;">
+        <input matInput placeholder="Password" formControlName="password" [(ngModel)]="Password" name="username" value=""type="password">
+        <mat-error>Wrong Password</mat-error>
       </mat-form-field>
       </form>
   </mat-dialog-content>
   
-  <mat-dialog-actions>
-      <button class="mat-raised-button" (click)="login()" style="background-color:steelblue;">LOGIN</button>
+  <mat-dialog-actions style="margin:auto;">
+      <button class="mat-raised-button" [disabled]="!loginForm.valid"(click)="login()" style="background-color:steelblue;">LOGIN</button>
   </mat-dialog-actions>
   </div>
